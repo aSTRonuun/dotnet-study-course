@@ -1,12 +1,12 @@
 ﻿using System;
-using MyProject01.Constantes;
+using MyProject01.ObjectAndVar;
 
 namespace MyProject01 {
-    class Program {
+    class App {
 
         static void Main(string[] args) {
 
-           Program02.App();
+           Program.App();
         }
     }
 }
