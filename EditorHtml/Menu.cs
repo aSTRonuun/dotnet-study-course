@@ -15,6 +15,7 @@ namespace EditorHtml {
             WriteOptions();
 
             var option = short.Parse(Console.ReadLine());
+            HandleMenuOption(option);
 
 
         }
@@ -45,7 +46,6 @@ namespace EditorHtml {
             Console.Write("\n");
         }
 
-
         public static void WriteOptions() {
 
             Console.SetCursorPosition(3,2);
@@ -62,15 +62,38 @@ namespace EditorHtml {
             Console.WriteLine("0 - Sair");
             Console.SetCursorPosition(3,10);
             Console.Write("Option > ");
-
-            
-            
-            
-            
-            
-            
         } 
         
+        public static void HandleMenuOption(short option) {
 
+            switch(option) {
+                case 1: Editor.Show(); break;
+                case 2: LoadFile(); break;
+                case 0: {
+                    Console.Clear();
+                    Environment.Exit(0);
+                    break;
+                }
+                default: Show(); break;
+                
+            } 
+        }
+
+        public static void LoadFile() {
+
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("With file path do you want to open?");
+            Console.Write("> ");
+            string path = Console.ReadLine();
+
+            using (var file = new StreamReader(path)) {
+
+                string text = file.ReadToEnd();
+                Viewer.Show(text);
+            }
+            
+        }
     }
 }
