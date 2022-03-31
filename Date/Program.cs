@@ -6,8 +6,8 @@ namespace Date{
 
         public static void Main(string[] args) {
             
-            
-            Program02.App();
+            Console.Clear();
+            Program06.App();
             
         }
     }
