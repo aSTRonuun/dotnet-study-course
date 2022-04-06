@@ -26,6 +26,10 @@ namespace Exceptions {
                 
                 Console.WriteLine(ex.InnerException);
                 Console.WriteLine(ex.Message);
+            } finally {
+                // Recomenado usar o finally para quando ocorer algum erro o finally será executado para que seja verificado e seja feito algo.
+                Console.WriteLine($" Chegou ao fim do programa");
+                
             }
             
             
